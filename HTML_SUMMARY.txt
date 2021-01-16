@@ -1,0 +1,79 @@
+*HTML
+-편집기를 이용해서 글을 쓴다는 것은 내부적으로는 HTML코드를 생산하는 것임
+-글을 이미지를 이용하여 표현하는 것보다 HTML코드를 이용하여 표현하는 것이 좋은 이유
+ -비지니스 적인 측면에서, 이미지로 글을 쓰는 경우 HTML코드의 태그와 정보를 분석하는 검색 엔진에게는 존재하지 않는 페이지가 됨
+ -휴머니즘적인 측면에서, 시각정보를 청각화해서 정보를 얻어야 하는 시각장애인에게 이미지 문자는 존재하지 않는 정보가 됨.
+-웹 페이지가 어떤 코드로 만들어졌는지 알고싶다면 웹 브라우저에서 마우스 오른쪽>페이지 소스보기를 누르면 됨
+
+
+*태그
+-앞에 있는 태그를 열리는 태그, 뒤에있는 태그를 닫히는 태그라 하며, 구분하기위해 '/'를 붙임
+ex)
+<h1></h1> ~ <h6></h6>
+-제목을 나타내는 태그, 숫자가 작을수록 글씨가 큼
+<u></u>
+-underline, 밑줄
+<strong></strong>
+-글씨 진하게 표시
+<br>
+-줄바꿈
+<p></p>
+-단락 나눔
+<p style="margin-top:40px;"></p>
+-단락 여백 원하는만큼 나누기(CSS속성 이용)
+
+
+*속성
+<img src="coding.jpg" width="100%"> // 이미지 파일 삽입
+-src="coding.jpg" width="100%" 와 같은 부분을 속성이라고 하며, 태그의 이름만으로는 정보가 부족할 때 속성을 통해 의미를 부가하는 역할을 함
+
+
+*부모자식
+<parent>
+  <child>
+    ...
+  </child>
+</parent>
+-이처럼 태그가 서로 포함관계에 있을 때 포함하고 있는 태그를 부모태그, 포함된 태그를 자식 태그라고 함
+
+
+*목록
+<ol>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+</ol>
+<ul>
+  <li>egoing</li>
+  <li>k8805</li>
+  <li>youbin</li>
+  <li>HTML</li>
+</ul>
+-목차를 쓸 때 사용하는 태그<li>와 어디서부터 어디까지가 연관된 항목인지 구분하기 위한 부모 태그<ol>,<ul>(ordered list, unordered list)가 있음
+
+
+*다중커서를 이용해 한꺼번에 태그 입력하는법
+-Ctrl 키를 누른채로 클릭하면 클릭하는 위치마다 커서가 생김
+
+
+*페이지의 제목 만들기
+<title>WEB1 - HTML</title>
+-<title>이라는 태그를 사용하면 웹 페이지의 제목을 사용자에게 명시적으로 알려줄 수 있을 뿐더러 검색 엔진과 같은 기계들이 이 태그를 제목과 같은 정보로서 사용함.
+
+
+*한글 깨짐 현상 방지
+-본문 설명 부분에 <meta charset="utf-8"> 추가
+
+
+*본문과 본문을 설명
+-본문을 설명하는 태그는 <head>, 본문은 <body>라는 태그로 묶어줌
+-모든 태그는 <head>태그 또는 <body>태그 중 하나 아래에 놓이게 됨.
+-이 두 태그를 감싸는 최고위층 태그는 <html>이며, 이 태그 위에 관용적으로 이 문서에는 HTML이 담겨 있다는 뜻에서 <!DOCTYPE HTML>을 붙여줌
+
+
+*링크 걸기
+-태그 <a>를 사용
+-<a href="https://www.w3.org/TR/html5/">Hypertext Markup Language (HTML)</a> //href속성에 링크 지정
+-<a href="https://www.w3.org/TR/html5" target="_blank">Hypertext Markup Language (HTML)</a> //target속성 지정, 새탭으로 열게 하기
+-<a href="https://www.w3.org/TR/html5" target="_blank" title="HTML5 specification">Hypertext Markup Language (HTML)</a> //title속성 추가, 마우스를 갖다 대었을 때 툴팁 보여주기
+(HTML사용설명서 - html specification 링크 : https://www.w3.org/TR/html5/
