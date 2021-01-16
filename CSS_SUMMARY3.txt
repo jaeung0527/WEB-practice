@@ -1,0 +1,80 @@
+*<div>와 <span>
+-디자인 목적을 위해 어떠한 의미도 없는 태그를 사용할 경우가 있음
+-예를들어 <ol>,<h2>,<p>태그를 묶고싶다면 이러한 태그들은 각각 의미와 기능이 있는 태그이기 때문에 <div>태그를 사용해야 함
+-<div>는 블록레벨 엘리먼트, <span>은 인라인 엘리먼트이므로 목적에 따라 사용하면 됨
+<style>
+  ...
+  div{
+    border: 5px solid gray;
+  }
+  #grid{
+    border:5px solid pink;
+  }
+  ...
+</style>
+...
+<div id="grid">
+  <div>NAVIGATION</div>
+  <div>article</div>
+</div>
+...
+
+
+*display속성
+-속성값으로 block, inline, gird, none등을 지정해 어떤 태그가 표시되는 방법을 바꾸는 속성
+
+
+*grid
+-CSS Grid(그리드)는 2차원(행과 열)의 레이아웃 시스템을 제공함
+#grid{
+  border:5px solid pink;
+  display: grid; // grid 속성 지정
+  grid-template-columns: 1fr 1fr;//가로로 배치
+}
+-텍스트가 많아짐에 따라 자동으로 글을 감싸는 세로(가로) 공간 또한 커지게 됨
+
+
+*이 웹페이지에 있는 모든<ol>중에서 부모가 gird인 태그를 선택
+#grid ol {
+  ...
+}
+
+
+*미디어 쿼리
+-화면 크기에 따라 웹 페이지의 각 요소들이 반응해서 최적화된 모양으로 바뀌는 것을 반응형 웹(responsive web)이라고 함
+-ex) 화면 크기(크롬 개발자 도구를 연고 화면크기를 변경시 크기 확인 가능)에 따른 미디어 쿼리 적용
+<style>
+...
+  @media(min-width: 800px){ //화면 너비가 800px이상일 경우
+    div{
+      display:none;
+    }
+  }
+...
+</style>
+-이와 같이 화면의 특성에 따라 특정 조건을 만족할 때만 미디어 쿼리의 코드를 동작시키는 것이 가능함.
+ex)
+<style>
+...
+@media(max-width: 800px){//화면 너비가  800px이하일 경우
+  #grid{
+    display: block;
+  }
+  #grid ol {
+    border-right: none;
+  }
+  h1{
+    border-bottom: none;
+  }
+}
+...
+</style>
+
+
+*<link>태그로 CSS파일 연결 (CSS코드 중복제거)
+<head>
+  ...
+  <link rel="stylesheet" href="style.css" />
+  ...
+</head>
+-재사용성이 높아지며 코드의 양이 줄어들어 트래픽을 덜 쓸 수 있다는 장점이 있음.
