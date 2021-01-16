@@ -1,0 +1,65 @@
+*폰트 사이즈 변경과 가운데 정렬
+h1{
+  font-size:45px;
+  text-align:center;
+}
+
+*클래스로 묶은 뒤 속성 적용
+...
+.saw{
+  color:gray;
+}
+.active{
+  color:red;
+}
+...
+<li><a href="1.html" class="saw">HTML</a></li>
+<li><a href="2.html" class="saw active">CSS</a></li> //saw 와 active 클래스 모두에 소속됨
+-.을 붙이지 않는 경우 태그를 선택하는 선택자가 되므로 .을 붙여 class값이 saw인 태그를 찾아주어야함
+-글자 CSS 우선순위에 의해 태그에 가까이 있는 active 클래스가 적용되며 빨간색으로 변함
+
+
+*id선택자
+...
+#active{
+  color:red;
+}
+.saw{
+  color:gray;
+}
+...
+<li><a href="1.html" class="saw">HTML</a></li>
+<li><a href="2.html" class="saw" id="active">CSS</a></li>
+-id선택자의 우선순위가 더 높으므로 빨간색으로 변함
+-태그 선택자의 우선순위가 가장 낮고, 그다음이 클래스, 그 다음이 ID선택자임
+-우선순위가 같다면 마지막에 등장하는 선택자가 우선순위가 높음
+-id선택자의 값인 active는 한번만 등장하기가 권장됨
+
+
+*박스 모델 그리기
+<style>
+  h1,a{
+    border-width: 5px;
+    border-color: red;
+    border-style: solid;
+    또는
+    border: 5px solid red; // 테두리 선의 너비, 실선, 색, 순서상관없음
+
+    padding: 20px; // 테두리와 콘텐츠 사이 간격
+    magin: 0; // 테두리 와 테두리 사이의 간격
+    width: 100px; // 테두리 안 공간의 너비
+    height: 100px; //테두리 안 공간의 높이
+  }
+</style>
+-화면 전체를 쓰는 태그(h1등)를 블록 레벨 엘리먼트, 자기 자신의 콘텐츠 크기만큼 쓰는 태그(a등)들을 인라인 엘리먼트 라고 함.
+-블록레벨 엘리먼트라도 인라인 엘리먼트처럼 자신의 부피만큼 쓰게 할 수 있음(display: inline, 인라인->블록의 경우 display:block)
+-텍스트를 마우스 오른쪽 버튼을 클릭하여 검사 항목을 누르면 어떤 CSS style의 영향을 받고있는지 보여주며, 아래로 내리면 박스 모델이 나타남
+
+
+*밑줄 긋기(아래쪽 테두리)
+h1{
+  ...
+  border-bottom: 1px solid gray; //아래쪽 테두리
+  ...
+}
+-각 태그의 margin과 padding값을 적절히 조절하여 보기 좋은 테두리를 만들 수 있음.
